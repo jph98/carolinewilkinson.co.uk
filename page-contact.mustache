@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> header }}
+
+<body class="black">
+
+  {{> navbar }}
+
+  <div class="container firstcontainer">
+    <div class="row">
+      <div class="section">
+        <h1 class="header left white-text">Contact</h1>        
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="section">                 
+        <h4 class='grey-text contact-section'>Location(s)</h4>
+        <p class="white-text">
+        BS37, Bristol
+        </p>
+        <div class='mapcustom' id="mapContainer"></div>
+        <h4 class='grey-text contact-section'>Email</h4>
+        <p class="white-text">
+          <a href='mailto: cazmaraline@gmail.com'>cazmaraline at gmail.com</a>
+        </p>           
+        <h4 class='grey-text contact-section'>Web</h4>
+        <p class="white-text">
+          <a href='https://www.hwintegral.com'>Design Consulting</a>
+        </p>       
+      </div>
+    </div>
+  </div>  
+
+  {{> footer }}
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script src="js/map.js"/>
+    
+  </body>
+</html>
+

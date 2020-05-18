@@ -35,12 +35,13 @@ function copyResources() {
     console.log('Copied resources');
 }
 
-const watcher = chokidar.watch('.', {
-    persistent: true,
-    ignored: 'docs',
-});
+function build() {
 
-watcher.on('change', () => {
+    const watcher = chokidar.watch('.', {
+        persistent: true,
+        ignored: 'docs',
+    });
+    
     console.log('Building site [' + getTime() + ']');
     var template = fs.readFileSync('index.mustache', 'utf8');
     var metadata = JSON.parse(fs.readFileSync('sitemetadata.json', 'utf8'));
@@ -61,5 +62,9 @@ watcher.on('change', () => {
     });
 
     copyResources();
-});
-    
+    watcher.on('change', () => {
+        build();
+    });    
+}
+
+build();
